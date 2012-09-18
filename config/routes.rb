@@ -1,4 +1,6 @@
 Movieinfo::Application.routes.draw do
+  resources :bollywood_news
+
   root :to =>  "pages#home"
 
   # The priority is based upon order of creation:

@@ -31,8 +31,824 @@ body {
 // Example:
 // @linkColor: #ff0000;
 
-.now_showing  {
+.now_showing, .schedule_upper_div, .schedule_lower_div  {
     .border-radius( 5px );
 }
 .thumbnails li {margin-bottom:5px;}
 .thumbnails {margin:10px 0px 5px;}
+
+//
+// Variables
+// Swatch: Slate
+// Version: 2.1.1
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #272B30;
+@grayDark:              #3A3F44;
+@gray:                  #52575C;
+@grayLight:             #757C82;
+@grayLighter:           #BBBFC2;
+@white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #02A1DD;
+@blueDark:              #108CBB;
+@green:                 #87CA4D;
+@red:                   #9d261d;
+@yellow:                #F6D30D;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+// Scaffolding
+// -------------------------
+@bodyBackground:        @grayDarker;
+@textColor:             @grayLight;
+
+
+// Links
+// -------------------------
+@linkColor:             @white;
+@linkColorHover:        @white;
+
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+@baseFontSize:          13px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        18px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+// Tables
+// -------------------------
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             darken(@grayDark, 5%); // for striping
+@tableBackgroundHover:              @grayDark; // for hover
+@tableBorder:                       darken(@grayDarker, 5%); // table and cell border
+
+
+// Buttons
+// -------------------------
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            darken(@white, 10%);
+@btnBorder:                         darken(@white, 20%);
+
+@btnPrimaryBackground:              @grayLight;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 15%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnWarningBackground:              lighten(@orange, 15%);
+@btnWarningBackgroundHighlight:     @orange;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              @gray;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   #ccc;
+@inputBorderRadius:             3px;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         darken(@grayDarker, 3%);
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            @grayDark;
+@dropdownBorder:                rgba(0,0,0,.2);
+@dropdownDividerTop:            #e5e5e5;
+@dropdownDividerBottom:         darken(@grayDarker, 5%);
+
+@dropdownLinkColor:             @grayLight;
+
+@dropdownLinkColorHover:        @grayLighter;
+@dropdownLinkBackgroundHover:   @grayDarker;
+
+@dropdownLinkColorActive:       @dropdownLinkColor;
+@dropdownLinkBackgroundActive:  @grayDarker;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1030;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+// Sprite icons path
+// -------------------------
+@iconSpritePath:          "../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+
+
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @grayLight;
+
+
+// Hr border color
+// -------------------------
+@hrBorder:                @grayLighter;
+
+
+// Wells
+// -------------------------
+@wellBackground:                  darken(@grayDarker, 3%);
+
+
+// Navbar
+// -------------------------
+@navbarCollapseWidth:             979px;
+
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDark;
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLighter;
+@navbarLinkColorHover:            @grayLighter;
+@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarLinkBackgroundHover:       @grayDark;
+@navbarLinkBackgroundActive:      @navbarBackground;
+
+@navbarBrandColor:                @grayLighter;
+
+// Inverted navbar
+@navbarInverseBackground:                darken(@grayDarker, 10%);
+@navbarInverseBackgroundHighlight:       @grayDarker;
+@navbarInverseBorder:                    #252525;
+
+@navbarInverseText:                      @grayLight;
+@navbarInverseLinkColor:                 @grayLight;
+@navbarInverseLinkColorHover:            @white;
+@navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
+@navbarInverseLinkBackgroundHover:       transparent;
+@navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
+
+@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
+@navbarInverseSearchBackgroundFocus:     @white;
+@navbarInverseSearchBorder:              @navbarInverseBackground;
+@navbarInverseSearchPlaceholderColor:    #ccc;
+
+@navbarInverseBrandColor:                @navbarInverseLinkColor;
+
+
+// Pagination
+// -------------------------
+@paginationBackground:                #fff;
+@paginationBorder:                    #ddd;
+@paginationActiveBackground:          #f5f5f5;
+
+
+// Hero unit
+// -------------------------
+@heroUnitBackground:              darken(@grayDarker, 3%);
+@heroUnitHeadingColor:            inherit;
+@heroUnitLeadColor:               inherit;
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowWidth:       5px;
+@tooltipArrowColor:       @tooltipBackground;
+
+@popoverBackground:       #fff;
+@popoverArrowWidth:       10px;
+@popoverArrowColor:       #fff;
+@popoverTitleBackground:  darken(@popoverBackground, 3%);
+
+// Special enhancement for popovers
+@popoverArrowOuterWidth:  @popoverArrowWidth + 1;
+@popoverArrowOuterColor:  rgba(0,0,0,.25);
+
+
+
+// GRID
+// --------------------------------------------------
+
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             12;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         20px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+@gridColumnWidth1200:     70px;
+@gridGutterWidth1200:     30px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+@gridColumnWidth768:      42px;
+@gridGutterWidth768:      20px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+
+// 1200px min
+@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200/@gridRowWidth1200);
+@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200/@gridRowWidth1200);
+
+// 768px-979px
+@fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
+@fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+
+
+
+// Bootswatch.less
+// Swatch: Slate
+// Version: 2.1.1
+// -----------------------------------------------------
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+code, pre {
+	background-color: #F7F7F7;
+	border: 1px solid darken(@grayDarker, 5%);
+	text-shadow: none;
+}
+
+// SCAFFOLDING
+// -----------------------------------------------------
+
+hr, legend, .page-header {
+	border-top: none;
+	border-bottom: 1px solid darken(@grayDarker, 5%);
+	background-color: transparent;
+}
+
+// NAVBAR
+// -----------------------------------------------------
+
+.navbar {
+
+	.navbar-inner {
+		#gradient > .vertical-three-colors(@gray, @grayDark, 70%, @grayDark);
+	}
+
+	.brand {
+		font-weight: bold;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		border-right: 1px solid darken(@gray, 15%);
+	}
+
+	.navbar-text {
+		padding: 0 15px;
+		font-weight: bold;
+	}
+
+	.nav > li > a  {
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		border-right: 1px solid rgba(0, 0, 0, 0.2);
+		border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+		&:hover {
+			#gradient > .directional(@grayDarker, @grayDark, 280deg);
+			border-left: 1px solid transparent;
+			border-right: 1px solid transparent;
+		}
+	}
+
+	.nav > li.active > a,
+	.nav > li.active > a:hover {
+		color: @grayLighter;
+		background-color: @grayDark;
+		#gradient > .directional(lighten(@grayDarker, 4%), lighten(@grayDark, 4%), 280deg);
+		border-right: 1px solid darken(@gray, 15%);
+	}
+
+	.navbar-search .search-query {
+		border: 1px solid darken(@gray, 15%);
+	}
+
+	.divider-vertical {
+		background-color: transparent;
+		border-right: none;
+	}
+
+	.dropdown-menu::after {
+		border-bottom: 6px solid @grayDark;
+	}
+
+	&-inverse {
+
+		.navbar-inner {
+			#gradient > .vertical-three-colors(darken(@grayDarker, 3%), darken(@grayDarker, 8%), 70%, darken(@grayDarker, 8%));
+		}
+
+		.nav li > a {
+			background-image: none;
+			background-color: transparent;
+		}
+
+		.nav li > a:hover,
+		.nav li.active > a,
+		.nav li.active > a:hover {
+			#gradient > .directional(darken(@grayDarker, 3%), @grayDarker, 280deg);
+		}
+	}
+}
+
+@media (max-width: @navbarCollapseWidth) {
+
+	.navbar .nav-collapse {
+
+		.nav li > a,
+		.nav li > a:hover,
+		.nav .active > a,
+		.nav .active > a:hover {
+			.box-shadow(none);
+			color: @grayLighter;
+			border: 1px solid transparent;
+			background-color: transparent;
+			background-image: none;
+		}
+
+		.nav li > a:hover,
+		.nav .active > a:hover {
+			background-color: @grayDarker;
+		}
+
+		.navbar-form,
+		.navbar-search {
+			border-color: transparent;
+			.box-shadow(none);
+		}
+
+		.nav-header {
+			color: @grayLight;
+		}
+	}
+
+	.navbar-inverse .nav-collapse {
+
+		.nav li > a:hover,
+		.nav .active > a:hover {
+			background-color: @grayDarker !important;
+		}
+	}
+}
+
+div.subnav {
+
+	#gradient > .vertical-three-colors(@gray, @grayDark, 70%, @grayDark);
+	border: 1px solid transparent;
+	.box-shadow('0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1)');
+
+	.nav > li > a {
+		color: @grayLighter;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		border-right: 1px solid darken(@gray, 15%);
+		border-left: 1px solid @gray;
+
+		&:hover {
+			color: @grayLighter;
+			background-color: @grayDark;
+			#gradient > .directional(@grayDarker, @grayDark, 280deg);
+			border-left: 1px solid transparent;
+			border-right: 1px solid transparent;
+		}
+	}
+
+	.nav > li.active > a,
+	.nav > li.active > a:hover {
+		color: @grayLighter;
+		background-color: @grayDark;
+		#gradient > .directional(lighten(@grayDarker, 4%), lighten(@grayDark, 4%), 280deg);
+		border-right: 1px solid darken(@gray, 15%);
+	}
+
+	.nav > li:first-child > a,
+	.nav > li:first-child > a:hover {
+		border-left: 1px solid transparent;
+	}
+
+	&.subnav-fixed .nav > li.active:first-child > a,
+	&.subnav-fixed .nav > li:first-child > a:hover {
+		border-left: 1px solid darken(@gray, 15%);
+	}
+
+	.nav > li.active:last-child > a,
+	.nav > li:last-child > a:hover {
+		border-right: 1px solid darken(@gray, 15%);
+	}
+
+	.open .dropdown-toggle {
+		border-right: 1px solid darken(@gray, 15%);
+		border-left: 1px solid @gray;
+	}
+
+	&.subnav-fixed {
+		.box-shadow(none);
+	}
+}
+
+// NAV
+// -----------------------------------------------------
+
+.nav .nav-header {
+	text-shadow: none;
+}
+
+.nav > li > a {
+	#gradient > .vertical-three-colors(@gray, @grayDark, 70%, @grayDark);
+	.box-shadow('0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1)');
+	border: none;
+	color: @grayLight;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.nav > li.active > a,
+.nav > li.active > a:hover {
+	background-color: transparent;
+	border: none;
+	color: @white;
+}
+
+.nav > li > a:hover {
+	background-color: transparent;
+	color: @grayLighter;
+}
+
+.nav-list {
+	background-color: @grayDark;
+	.box-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+
+	li > a {
+		background-image: none;
+		text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+	}
+
+	.nav-header {
+		color: @gray;
+		text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+	}
+
+	.divider {
+		border-bottom: 1px solid darken(@grayDarker, 5%);
+		background-color: transparent;
+	}
+}
+
+.nav-tabs {
+	border-bottom: none;
+}
+
+.tabs-below .nav-tabs {
+	border-top: none;
+}
+
+.tabs-left .nav-tabs {
+	border-right: none;
+}
+
+.tabs-right .nav-tabs {
+	border-left: none;
+}
+
+.nav-tabs.nav-stacked > li > a,
+.nav-tabs.nav-stacked > li > a:hover {
+	border: none;
+}
+
+.breadcrumb {
+	.box-shadow(none);
+}
+
+.breadcrumb, .pagination > ul a, .pager a {
+	border: 1px solid transparent;
+	.box-shadow('0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1)');
+	#gradient > .vertical-three-colors(@gray, @grayDark, 70%, @grayDark);
+}
+
+.breadcrumb li, .breadcrumb a, .pagination > ul a {
+	color: @grayLighter;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumb a {
+	color: @white;
+}
+
+.pagination {
+
+	& > ul {
+		.box-shadow(none);
+	}
+
+	& li > a,
+	& li.disabled > a {
+		border-left: 1px solid @gray;
+		border-right: 1px solid darken(@gray, 15%);
+		border-top: none;
+		border-bottom: none;
+	}
+
+	li.disabled > a {
+		#gradient > .vertical-three-colors(@grayLight, @gray, 70%, @gray);
+	}
+
+	& > ul > li:not(.disabled) a:hover,
+	  {
+		#gradient > .directional(@grayDarker, @grayDark, 280deg);
+		border-left: 1px solid transparent;
+	}
+
+	& > ul > li.active > a,
+	& > ul > li.active > a:hover {
+		color: @grayLighter;
+		background-color: @grayDark;
+		#gradient > .directional(lighten(@grayDarker, 4%), lighten(@grayDark, 4%), 280deg);
+		border-left: 1px solid transparent;
+	}
+}
+
+.pager {
+
+	a:hover {
+		#gradient > .directional(@grayDarker, @grayDark, 280deg);
+		border: 1px solid transparent;
+	}
+
+	.disabled a,
+	.disabled a:hover {
+		background-color: transparent;
+	}
+}
+
+// BUTTONS
+// -----------------------------------------------------
+
+.btn {
+    .buttonBackground(@gray, darken(@gray, 10%));
+	.border-radius(3px);
+	border: 1px solid @grayDarker;
+}
+
+.btn, .btn:hover {
+	color: @white;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  .buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+}
+
+.btn-warning {
+  .buttonBackground(lighten(@orange, 15%), @orange);
+}
+
+.btn-danger {
+  .buttonBackground(#ee5f5b, #bd362f);
+}
+
+.btn-success {
+  .buttonBackground(#62c462, #51a351);
+}
+
+.btn-info {
+  .buttonBackground(#5bc0de, #2f96b4);
+}
+
+.btn-inverse {
+  .buttonBackground(#454545, #262626);
+}
+
+.caret {
+	border-top-color: @white;
+}
+
+// TABLES
+// -----------------------------------------------------
+
+// FORMS
+// -----------------------------------------------------
+
+label, input, button, select, textarea, legend {
+	color: @textColor;
+}
+
+legend, label {
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.input-prepend .add-on,
+.input-append .add-on {
+	vertical-align: top;
+	background-color: @gray;
+	border-top: 1px solid @grayLight;
+	border-left: 1px solid @grayLight;
+	border-bottom: 1px solid @grayDark;
+	border-right: 1px solid @grayDark;
+	text-shadow: none;
+}
+
+.input-append .btn,
+.input-prepend .btn {
+	margin-top: -1px;
+	padding: 5px 14px;
+}
+
+.uneditable-input,
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	color: @grayLighter;
+}
+
+.form-actions {
+	border-top: none;
+}
+
+// DROPDOWNS
+// -----------------------------------------------------
+
+.dropdown-menu {
+	.box-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+
+	li.active a,
+	li.active a:hover {
+		background-color: @grayDark;
+	}
+}
+
+.dropdown.open .dropdown-toggle {
+	background-color: @grayDark;
+	color: @grayLighter;
+}
+
+.dropdown-menu .divider {
+	border-top: none;
+	border-bottom: 1px solid darken(@grayDarker, 5%);
+	background-color: transparent;
+}
+
+// ALERTS, LABELS, BADGES
+// -----------------------------------------------------
+
+.label, .alert {
+  	color: rgba(255, 255, 255, 0.9);
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+	.box-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.alert-heading {
+  	color: rgba(255, 255, 255, 0.9);
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.alert {
+  background-color: @orange;
+  border-color: @orange;
+}
+
+.alert-success {
+  background-color: @successText;
+  border-color: @successText;
+}
+
+.alert-error {
+  background-color: @errorText;
+  border-color: @errorText;
+}
+
+.alert-info {
+  background-color: @infoText;
+  border-color: @infoText;
+}
+
+// MISC
+// -----------------------------------------------------
+
+.well, .hero-unit {
+	.box-shadow(inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail,
+a.thumbnail:hover {
+  border: 1px solid darken(@grayDarker, 5%);
+}
+
+.progress {
+	background-color: darken(@grayDarker, 3%);
+	#gradient > .vertical(darken(@grayDarker, 3%), darken(@grayDarker, 3%));
+	.box-shadow(inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+	border-top: 1px solid darken(@grayDarker, 5%);
+
+	p {
+		color: @textColor;
+	}
+}
+
+.modal {
+
+	background-color: darken(@grayDark, 5%);
+
+	&-header {
+		border-bottom: none;
+	}
+
+	&-body {
+		border-bottom: 1px solid #1C1E22;
+	}
+
+	&-footer {
+		border-top: none;
+		background-color: @grayDarker;
+		.box-shadow(none);
+	}
+}
+
+// MEDIA QUERIES
+// -----------------------------------------------------
+
+@media (max-width: 979px) {
+	.navbar .brand {
+		border-right: none;
+	}
+}
+
+@media (max-width: 768px) {
+	div.subnav .nav > li + li > a {
+		border-top: 1px solid transparent;
+	}
+}
