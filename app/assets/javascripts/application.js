@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+$('#ctl00_ContentPlaceHolder_Middle_ctl00_StillsContainer').remove();
+$('#movie_rating').hide();
+var rating = parseInt($('#movie_rating').text())-1;
+$('.review_rating input:eq('+ rating +')').attr('checked',true);
+$('em.current').hide();
+

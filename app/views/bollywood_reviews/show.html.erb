@@ -1,45 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @bollywood_review.title %>
-</p>
-
-<p>
-  <b>Mini description:</b>
-  <%= @bollywood_review.mini_description %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @bollywood_review.description %>
-</p>
-
-<p>
-  <b>Thumb url:</b>
-  <%= @bollywood_review.thumb_url %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%= @bollywood_review.image_url %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%= @bollywood_review.rating %>
-</p>
-
-<p>
-  <b>Data url:</b>
-  <%= @bollywood_review.data_url %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @bollywood_review.category %>
-</p>
-
-
-<%= link_to 'Edit', edit_bollywood_review_path(@bollywood_review) %> |
-<%= link_to 'Back', bollywood_reviews_path %>
+<div class='span12' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
+<h3><%= @bollywood_review.title %></h3>
+<div class='span2' ><img src=<%= @bollywood_review.image_url%> ></img>
+<span id='movie_rating' ><%=@bollywood_review.rating%> </span>
+<div class='review_rating' style='margin:5px;'>
+	<input name="star3" type="radio" class="star" disabled="disabled"></input>
+	<input name="star3" type="radio" class="star" disabled="disabled"></input>
+	<input name="star3" type="radio" class="star" disabled="disabled"></input>
+	<input name="star3" type="radio" class="star" disabled="disabled"></input>
+	<input name="star3" type="radio" class="star" disabled="disabled"></input>
+</div>
+</div>
+<div class='span9' style='text-align:justify'><%= raw(@bollywood_review.description) %></div>
+</div>

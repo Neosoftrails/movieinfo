@@ -2,8 +2,8 @@ class BollywoodPreviewsController < ApplicationController
   # GET /bollywood_previews
   # GET /bollywood_previews.json
   def index
-    @bollywood_previews = BollywoodPreview.all
-
+    @bollywood_previews = BollywoodPreview.paginate(:page => params[:page], :per_page => 10)
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bollywood_previews }

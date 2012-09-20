@@ -17,7 +17,6 @@ require 'open-uri'
 				@preview.title = f.title
 				@preview.data_url = f.url
 				@preview.category = f.categories.join(',')
-				puts @preview.inspect
 				get_detail_preview(@preview )			
 			end
 		rescue => e
@@ -28,12 +27,11 @@ require 'open-uri'
 	
 	def get_detail_preview(preview)
 		begin
-		    puts 'dasdasdsasdasd'
 			@detail_data = Nokogiri::HTML(open(preview.data_url).read)
 			preview.description = @detail_data.at_css('#ctl00_ContentPlaceHolder_Middle_Preview').to_html
 			preview.description = preview.description.gsub(/<br><br>/, "<br>")
 			preview.description = preview.description.gsub(/<div>(.+)<\/div>/, "")
-			preview.image_url = @detail_data.at_css('#ctl00_ContentPlaceHolder_Left_1_MoviePoster')[:src]
+			preview.image_url = 'http://www.nowrunning.com/' + @detail_data.at_css('#ctl00_ContentPlaceHolder_Left_1_MoviePoster')[:src]
 			puts preview.save!
 		rescue => e
 			puts ">>> error at nokogiri parsing or db entry >>>"

@@ -2,7 +2,7 @@ class BollywoodReviewsController < ApplicationController
   # GET /bollywood_reviews
   # GET /bollywood_reviews.json
   def index
-    @bollywood_reviews = BollywoodReview.all
+    @bollywood_reviews = BollywoodReview.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

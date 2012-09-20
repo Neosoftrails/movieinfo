@@ -1,31 +1,18 @@
-<h1>Listing bollywood_previews</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Data url</th>
-    <th>Image url</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @bollywood_previews.each do |bollywood_preview| %>
-  <tr>
-    <td><%= bollywood_preview.title %></td>
-    <td><%= bollywood_preview.description %></td>
-    <td><%= bollywood_preview.data_url %></td>
-    <td><%= bollywood_preview.image_url %></td>
-    <td><%= bollywood_preview.category %></td>
-    <td><%= link_to 'Show', bollywood_preview %></td>
-    <td><%= link_to 'Edit', edit_bollywood_preview_path(bollywood_preview) %></td>
-    <td><%= link_to 'Destroy', bollywood_preview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Bollywood preview', new_bollywood_preview_path %>
+<div class='span3'>
+	<%#= render :partial => 'bollywood_news/news', :collection => @bollywood_news %>
+</div>
+<div class='span8 news'>
+	<div class='span12 news_item'>
+		<% @bollywood_previews.each do |bollywood_preview| %>					
+			<div class='row-fluid' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
+				<div class='span2'><img src=<%= bollywood_preview.image_url%> style='height:100px;width:125px;' ></img></div>
+				<div class='span8' style='text-align:justify'>
+					<h4><%= bollywood_preview.title %></h4>
+					<%= raw(truncate(bollywood_preview.description, :length => 250)) %>  <%= link_to 'read more..',bollywood_preview %>
+				</div>
+			</div>
+		<% end %>			
+	</div>
+	<hr />
+	<div style='float:right'><%= will_paginate @bollywood_previews %></div>
+</div> 

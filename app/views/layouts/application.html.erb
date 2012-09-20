@@ -13,6 +13,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "jquery.rating", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -60,11 +61,11 @@
 	</a>
 	<div class="container nav-collapse">
 	  <ul class="nav">
-	      <li><%= link_to "Home", "/path1"  %></li>
+	      <li><%= link_to "Home", "/"  %></li>
 	      <li><%= link_to "News", bollywood_news_index_path %></li>
-	      <li><%= link_to "Movie Schedule", "/path3"  %></li>
-	      <li><%= link_to "Movie Schedule", "/path3"  %></li>
-	      <li><%= link_to "Ticket Pricing ", "/path1"  %></li>
+	      <li><%= link_to "Movie Previews", bollywood_previews_path %></li>
+	      <li><%= link_to "Movie Reviews", bollywood_reviews_path  %></li>
+	      <li><%= link_to "Movie Trailers", bollywood_trailers_path  %></li>
 	      <li><%= link_to "Buy Tickets Online", "/path1"  %></li>
 	  </ul>
 	</div>
@@ -86,6 +87,5 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "jquery.anystretch" %>
   </body>
 </html>

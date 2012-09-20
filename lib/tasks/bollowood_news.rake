@@ -31,7 +31,7 @@ require 'open-uri'
 			news_item.description = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ArticleDetail').to_html
 			news_item.description = news_item.description.gsub(/<br><br>/, "<br>")
 			news_item.description = news_item.description.gsub(/<div>(.+)<\/div>/, "")
-			news_item.image_url = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ImageBox img')[:src]
+			news_item.image_url = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ImageBox img')[:src] rescue nil
 			puts news_item.save!
 		rescue => e
 			puts ">>> error at nokogiri parsing or db entry >>>"

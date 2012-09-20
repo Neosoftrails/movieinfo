@@ -29,8 +29,8 @@ require 'open-uri'
 	def get_detail_review(review)
 		begin
 			@detail_data = Nokogiri::HTML(open(review.data_url).read)
-			#review.description = @detail_data.at_css('#ctl00_ContentPlaceHolder_Middle_ReviewDetailArea').to_html
-			#review.description = review.description.gsub(/<br><br>/, "<br>")
+			review.description = @detail_data.at_css('#ctl00_ContentPlaceHolder_Middle_ReviewDetailArea').to_html
+			review.description = review.description.gsub(/<br><br>/, "<br>")
 			#review.description = review.description.gsub(/<div>(.+)<\/div>/, "")
 			review.image_url = 'http://www.nowrunning.com'+ @detail_data.at_css('#ctl00_ContentPlaceHolder_Left_1_MoviePoster')[:src]
 			review.rating = @detail_data.at_css('#ctl00_ContentPlaceHolder_Middle_RatingText').text.to_i
