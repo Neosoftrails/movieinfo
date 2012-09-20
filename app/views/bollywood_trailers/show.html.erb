@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @bollywood_trailer.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bollywood_trailer.description %>
+</p>
+
+<p>
+  <b>Thumb url:</b>
+  <%= @bollywood_trailer.thumb_url %>
+</p>
+
+<p>
+  <b>Data url:</b>
+  <%= @bollywood_trailer.data_url %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%= @bollywood_trailer.video_url %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @bollywood_trailer.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_bollywood_trailer_path(@bollywood_trailer) %> |
+<%= link_to 'Back', bollywood_trailers_path %>

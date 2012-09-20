@@ -1,4 +1,10 @@
 Movieinfo::Application.routes.draw do
+  resources :bollywood_trailers
+
+  resources :bollywood_reviews
+
+  resources :bollywood_previews
+
   resources :bollywood_news
 
   root :to =>  "pages#home"

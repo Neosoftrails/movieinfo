@@ -11,13 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918093545) do
+ActiveRecord::Schema.define(:version => 20120920085335) do
 
   create_table "bollywood_news", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
     t.string   "data_url"
+    t.string   "category"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "bollywood_previews", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "data_url"
+    t.string   "image_url"
+    t.string   "category"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "bollywood_reviews", :force => true do |t|
+    t.string   "title"
+    t.string   "mini_description"
+    t.text     "description"
+    t.string   "thumb_url"
+    t.string   "image_url"
+    t.integer  "rating"
+    t.string   "data_url"
+    t.string   "category"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "bollywood_trailers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "thumb_url"
+    t.string   "data_url"
+    t.string   "video_url"
     t.string   "category"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @bollywood_preview.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bollywood_preview.description %>
+</p>
+
+<p>
+  <b>Data url:</b>
+  <%= @bollywood_preview.data_url %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @bollywood_preview.image_url %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @bollywood_preview.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_bollywood_preview_path(@bollywood_preview) %> |
+<%= link_to 'Back', bollywood_previews_path %>

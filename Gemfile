@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem "twitter-bootstrap-rails", "~> 2.1.3"
 gem "feedzirra"
 gem "nokogiri", "~> 1.5.5"
+gem "jquery-star-rating-rails", "~> 0.0.1"
 
 # Gems used only for assets and not required
 # in production environments by default.

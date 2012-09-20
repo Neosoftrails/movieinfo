@@ -1,0 +1,37 @@
+<h1>Listing bollywood_reviews</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Mini description</th>
+    <th>Description</th>
+    <th>Thumb url</th>
+    <th>Image url</th>
+    <th>Rating</th>
+    <th>Data url</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bollywood_reviews.each do |bollywood_review| %>
+  <tr>
+    <td><%= bollywood_review.title %></td>
+    <td><%= bollywood_review.mini_description %></td>
+    <td><%= bollywood_review.description %></td>
+    <td><%= bollywood_review.thumb_url %></td>
+    <td><%= bollywood_review.image_url %></td>
+    <td><%= bollywood_review.rating %></td>
+    <td><%= bollywood_review.data_url %></td>
+    <td><%= bollywood_review.category %></td>
+    <td><%= link_to 'Show', bollywood_review %></td>
+    <td><%= link_to 'Edit', edit_bollywood_review_path(bollywood_review) %></td>
+    <td><%= link_to 'Destroy', bollywood_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bollywood review', new_bollywood_review_path %>

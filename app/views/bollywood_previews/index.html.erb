@@ -1,0 +1,31 @@
+<h1>Listing bollywood_previews</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Data url</th>
+    <th>Image url</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bollywood_previews.each do |bollywood_preview| %>
+  <tr>
+    <td><%= bollywood_preview.title %></td>
+    <td><%= bollywood_preview.description %></td>
+    <td><%= bollywood_preview.data_url %></td>
+    <td><%= bollywood_preview.image_url %></td>
+    <td><%= bollywood_preview.category %></td>
+    <td><%= link_to 'Show', bollywood_preview %></td>
+    <td><%= link_to 'Edit', edit_bollywood_preview_path(bollywood_preview) %></td>
+    <td><%= link_to 'Destroy', bollywood_preview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bollywood preview', new_bollywood_preview_path %>

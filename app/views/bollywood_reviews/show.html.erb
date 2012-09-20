@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @bollywood_review.title %>
+</p>
+
+<p>
+  <b>Mini description:</b>
+  <%= @bollywood_review.mini_description %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bollywood_review.description %>
+</p>
+
+<p>
+  <b>Thumb url:</b>
+  <%= @bollywood_review.thumb_url %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @bollywood_review.image_url %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @bollywood_review.rating %>
+</p>
+
+<p>
+  <b>Data url:</b>
+  <%= @bollywood_review.data_url %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @bollywood_review.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_bollywood_review_path(@bollywood_review) %> |
+<%= link_to 'Back', bollywood_reviews_path %>
