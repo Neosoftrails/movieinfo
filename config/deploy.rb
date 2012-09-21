@@ -20,7 +20,7 @@ set :server, :passenger
 after "deploy:update_code", "deploy:migrate"
 after "deploy:migrate", "bundler:install_gems"
 after "bundler:install_gems", "bundler:update_gems"
-after "deploy:symlink", "deploy:update_crontab"
+after "bundler:update_gems", "deploy:update_crontab"
 
 
 namespace :deploy do
