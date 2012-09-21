@@ -1,14 +1,15 @@
 <div class='span12' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
-<h3><%= @bollywood_review.title %></h3>
-<div class='span2' ><img src=<%= @bollywood_review.image_url%> ></img>
-<span id='movie_rating' ><%=@bollywood_review.rating%> </span>
-<div class='review_rating' style='margin:5px;'>
-	<input name="star3" type="radio" class="star" disabled="disabled"></input>
-	<input name="star3" type="radio" class="star" disabled="disabled"></input>
-	<input name="star3" type="radio" class="star" disabled="disabled"></input>
-	<input name="star3" type="radio" class="star" disabled="disabled"></input>
-	<input name="star3" type="radio" class="star" disabled="disabled"></input>
-</div>
-</div>
-<div class='span9' style='text-align:justify'><%= raw(@bollywood_review.description) %></div>
+	<h3><%= @bollywood_review.title %></h3>
+	<span id='movie_rating' ><%=@bollywood_review.rating%> </span>
+	<div class='span2'>
+	<img src=<%= @bollywood_review.image_url%> ></img>
+ 	<div class='review_rating' style='margin-top:10px;'>
+		<input name="star3" type="radio" class="star" disabled="disabled"></input>
+		<input name="star3" type="radio" class="star" disabled="disabled"></input>
+		<input name="star3" type="radio" class="star" disabled="disabled"></input>
+		<input name="star3" type="radio" class="star" disabled="disabled"></input>
+		<input name="star3" type="radio" class="star" disabled="disabled"></input>
+	</div>
+	</div>
+	<div class='span9' style='text-align:justify'><%= raw(@bollywood_review.description) %></div>
 </div>

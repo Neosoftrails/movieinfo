@@ -20,4 +20,3 @@ $('#movie_rating').hide();
 var rating = parseInt($('#movie_rating').text())-1;
 $('.review_rating input:eq('+ rating +')').attr('checked',true);
 $('em.current').hide();
-

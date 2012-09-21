@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-body {background-image:url(pattern1.jpg);}
+/*body {background-image:url(pattern1.jpg);}*/
 .title {border-bottom: 1px dotted #FFF;padding-bottom:4px;}
-
+body {background-color:#C7A252 !important}
 

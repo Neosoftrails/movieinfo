@@ -1,33 +1,18 @@
-<h1>Listing bollywood_trailers</h1>
+<div class='span2'>
+	<%#= render :partial => 'bollywood_news/news', :collection => @bollywood_news %>
+</div>
+<div class='span9 news'>
+	<div class='row-fluid news_item'>
+		<ul>
+		<% @bollywood_trailers.each do |bollywood_trailer| %>					
+				<li class='span3' style='margin:10px 5px;float:left'><img src=<%= bollywood_trailer.thumb_url%> class='trailer_thumb_images'></img>
+				<%= bollywood_trailer.title %>
+				<%= bollywood_trailer.description%>
+				</li>
+		<% end %>			
+		</ul>
+	</div>
+	<hr />
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Thumb url</th>
-    <th>Data url</th>
-    <th>Video url</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+</div> 
 
-<% @bollywood_trailers.each do |bollywood_trailer| %>
-  <tr>
-    <td><%= bollywood_trailer.title %></td>
-    <td><%= bollywood_trailer.description %></td>
-    <td><%= bollywood_trailer.thumb_url %></td>
-    <td><%= bollywood_trailer.data_url %></td>
-    <td><%= bollywood_trailer.video_url %></td>
-    <td><%= bollywood_trailer.category %></td>
-    <td><%= link_to 'Show', bollywood_trailer %></td>
-    <td><%= link_to 'Edit', edit_bollywood_trailer_path(bollywood_trailer) %></td>
-    <td><%= link_to 'Destroy', bollywood_trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Bollywood trailer', new_bollywood_trailer_path %>

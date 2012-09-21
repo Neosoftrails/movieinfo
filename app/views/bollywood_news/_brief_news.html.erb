@@ -1,6 +1,6 @@
 <div class='row-fluid' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
-<div class='span2'><img src=<%= brief_news.image_url%> style='height:100px;width:125px;' ></img></div>
-<div class='span8' style='text-align:justify'>
+<div class='span2 news_image_container'><img src=<%= brief_news.image_url%> style='height:100px;width:125px;' ></img></div>
+<div class='span8 news_content_container' style='text-align:justify'>
 	<h4><%= brief_news.title %></h4>
 	<%= raw(truncate(brief_news.description, :length => 250)) %>  <%= link_to 'read more..',brief_news %>
 </div>

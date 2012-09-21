@@ -73,9 +73,9 @@ body {
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @grayDarker;
+@bodyBackground:        #C7A252;
 @textColor:             @grayLight;
-
+#C7A252
 
 // Links
 // -------------------------
@@ -840,6 +840,9 @@ a.thumbnail:hover {
 
 // MEDIA QUERIES
 // -----------------------------------------------------
+@media (min-width: 979px) {
+	.trailer_thumb_images{ width:150px;height:150px;}
+}
 
 @media (max-width: 979px) {
 	.navbar .brand {
@@ -851,4 +854,11 @@ a.thumbnail:hover {
 	div.subnav .nav > li + li > a {
 		border-top: 1px solid transparent;
 	}
+.news_image_container{float:left !important;margin-right:10px !important}
+.news_content_container{margin-left:125px !important;}
+}
+@media (max-width: 580px) {
+h1, h2, h3, h4 {font-size:14px;text-shadow:none;}
+.news_image_container{float:left !important;margin-right:10px !important}
+.news_content_container{margin-left:125px !important;}
 }

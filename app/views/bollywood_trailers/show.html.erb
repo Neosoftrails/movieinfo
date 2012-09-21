@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<script src="/assets/flowplayer-3.2.11.js"></script>
+
+<div class='row-fluid span5'>
+<a href= <%= @bollywood_trailer.video_url %> style="display:block;height:300px;" id="player"> </a> 
+</div>
 
 <p>
   <b>Title:</b>
@@ -10,26 +14,8 @@
   <%= @bollywood_trailer.description %>
 </p>
 
-<p>
-  <b>Thumb url:</b>
-  <%= @bollywood_trailer.thumb_url %>
-</p>
-
-<p>
-  <b>Data url:</b>
-  <%= @bollywood_trailer.data_url %>
-</p>
-
-<p>
-  <b>Video url:</b>
-  <%= @bollywood_trailer.video_url %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @bollywood_trailer.category %>
-</p>
 
 
-<%= link_to 'Edit', edit_bollywood_trailer_path(@bollywood_trailer) %> |
-<%= link_to 'Back', bollywood_trailers_path %>
+<script>
+	flowplayer("player", "/flowplayer-3.2.15.swf");
+</script>

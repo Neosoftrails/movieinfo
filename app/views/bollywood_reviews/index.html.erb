@@ -1,11 +1,11 @@
-<div class='span3'>
+<div class='span2'>
 	<%#= render :partial => 'bollywood_news/news', :collection => @bollywood_news %>
 </div>
-<div class='span8 news'>
+<div class='span9 news'>
 	<div class='span12 news_item'>
 		<% @bollywood_reviews.each do |bollywood_review| %>					
 			<div class='row-fluid' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
-				<div class='span3'><img src=<%= bollywood_review.image_url%> style='height:100px;width:125px;' ></img></div>
+				<div class='span2'><img src=<%= bollywood_review.image_url%> style='height:100px;width:125px;' ></img></div>
 				<div class='span9' style='text-align:justify'>
 					<h4><%= bollywood_review.title %></h4>
 					<div class='span12' style='margin-left:0px;'><%= bollywood_review.mini_description %>  <%= link_to 'read more..',bollywood_review %></div>
