@@ -1,5 +1,11 @@
 <div class='span12' style='border-bottom:1px dotted #FFF;margin-bottom:5px;padding:10px 0px'>
 <h3><%= @bollywoodnews.title %></h3>
-<div class='span2'><img src=<%= @bollywoodnews.image_url%> ></img></div>
+<div class='span2'></div>
+	<% if !brief_news.image_url.nil? %>
+		<div class='span2'><img src=<%= @bollywoodnews.image_url%> ></img></div>
+	<% else %>
+		<div class='span2'><img src='/assets/images_not_found.jpg'></img></div>
+	<% end %>	
+</div>	
 <div class='span9' style='text-align:justify'><%= raw(@bollywoodnews.description) %></div>
 </div>

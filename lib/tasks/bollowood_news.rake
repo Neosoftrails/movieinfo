@@ -17,7 +17,7 @@ require 'open-uri'
 				@news_item.title = f.title
 				@news_item.data_url = f.url
 				@news_item.category = f.categories.join(',')
-				get_detail_news(@news_item)			
+				get_detail_news(@news_item,f)			
 			end
 		rescue => e
 			puts ">>>> error at for loop & object initailization>>>"
@@ -25,10 +25,16 @@ require 'open-uri'
 		end		
 	end
 	
-	def get_detail_news(news_item)
+	def get_detail_news(news_item,feed)
 		begin
-			@detail_data = Nokogiri::HTML(open(news_item.data_url).read)
-			news_item.description = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ArticleDetail').to_html
+			puts news_item.data_url
+			@detail_data = Nokogiri::HTML(open(URI.encode(news_item.data_url)).read)
+			@description = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ArticleDetail')
+			if !@description.nil?
+				news_item.description = @description.to_html
+			else
+				news_item.description = feed.summary
+			end		
 			news_item.description = news_item.description.gsub(/<br><br>/, "<br>")
 			news_item.description = news_item.description.gsub(/<div>(.+)<\/div>/, "")
 			news_item.image_url = @detail_data.at_css('#ctl00_ContentPlaceHolderMainContent_ctl00_ImageBox img')[:src] rescue nil

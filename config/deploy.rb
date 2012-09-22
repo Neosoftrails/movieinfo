@@ -1,4 +1,4 @@
-set :rvm_ruby_string, 'ruby-1.9.2p320@movieinfo'
+set :rvm_ruby_string, 'ruby-1.9.2@movieinfo'
 
 set :application, "movieinfo"
 set :use_sudo, false
