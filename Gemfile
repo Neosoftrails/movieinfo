@@ -4,14 +4,9 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
-	#gem 'sqlite3'
-	gem "mysql", "~> 2.8.1"
-end
 
-group :production do
-	gem 'pg'
-end
+#gem 'sqlite3'
+gem "mysql", "~> 2.8.1"
 
 gem "twitter-bootstrap-rails", "~> 2.1.3"
 gem "feedzirra"
